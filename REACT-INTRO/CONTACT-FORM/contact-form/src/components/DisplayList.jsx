@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
+import styles from "./DisplayList.module.css";
 
 export class DisplayList extends Component {
   constructor(props) {
@@ -7,6 +8,7 @@ export class DisplayList extends Component {
 
     this.state = {
       contactList: [],
+      Click: false,
     };
   }
 
@@ -23,16 +25,24 @@ export class DisplayList extends Component {
       });
   }
 
+  HandleClick = (e) => {
+    this.setState({
+      Click: !this.state.Click,
+    });
+  };
+
   render() {
     const contactList = this.state.contactList;
-    // console.log(contactList);
     return (
       <div>
-        DisplayList
         {contactList.length
           ? contactList.map((contactList) => (
               <div key={contactList.id}>
-                {contactList.id}.{contactList.name}{" "}
+                <h3 className={styles.List} onClick={this.HandleClick}>
+                  {contactList.id} . {contactList.name} <br />{" "}
+                  {contactList.email} <br />
+                  {this.state.Click ? contactList.number : null}
+                </h3>
               </div>
             ))
           : null}

@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
+import Timer from './components/Timer'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-    <h1>Google Timer</h1>
+    <Timer />
     </div>
   )
 }

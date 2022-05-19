@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.mainDiv button{
+  /* border: 2px solid red; */
+  margin: 20px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

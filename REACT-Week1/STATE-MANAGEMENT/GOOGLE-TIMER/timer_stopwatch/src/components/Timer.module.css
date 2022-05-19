@@ -1,19 +1,19 @@
 .Timer {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     background-color: skyblue;
     display: flex;
     justify-content: center;
 }
-
+    
 .container{
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .TimerContainer{
     background-color: #fff;
     width: 20vw;
-    padding: 1rem 6rem;
+    padding: 0.1rem 6rem;
     border-radius: 1rem;
     box-shadow: 0 1rem 1rem -0.7rem rgb(0,0,0,0.4);    
 }
@@ -29,6 +29,34 @@
     border: none;
     border-radius: 15px;
     cursor: pointer;
+}
+
+.Start{
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    color: #fff;
+    font-size: 18px;
+    background-color: skyblue;
+    width: 100px;
+    height: 30px;
+    border: 0.1px solid transparent;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.Input{
+    width: 180px;
+    height: 30px;
+    margin: auto;
+}
+
+.InputDiv{
+    margin-top: 0px;
+    width: 350px;
+    height: 70px;
+    margin-left: -20px;
+    border: 0.1px solid transparent;
+    display: flex;
 }
 
 .Stop{

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import styles from "./Timer.module.css";
 
 function Timer() {
+  const [inputtext, setInputtext] = useState(1);
   const [second, setSecond] = useState(0);
-  const [minutes, setMinutes] = useState(0);
+  const [minutes, setMinutes] = useState(inputtext);
   const [stop, setStop] = useState(true);
 
   var timer;
@@ -11,11 +12,15 @@ function Timer() {
   useEffect(() => {
     if (stop === true) {
       timer = setInterval(() => {
-        setSecond(second + 1);
+        setSecond(second - 1);
 
-        if (second === 59) {
-          setMinutes(minutes + 1);
-          setSecond(0);
+        if (second === 0) {
+          setSecond(59);
+          setMinutes(minutes - 1);
+        }
+
+        if (minutes === 0) {
+          setMinutes(0);
         }
       }, 1000);
 
@@ -27,15 +32,23 @@ function Timer() {
 
   const handleRestart = () => {
     setSecond(0);
-    setMinutes(0);
+    setMinutes(inputtext);
   };
+
   const handleStop = (e) => {
     {
       e.target.innerText === "Stop" ? clearInterval(timer) : null;
     }
-    console.log(e.target.innerText);
-    console.log(stop);
     setStop(!stop);
+  };
+
+  const handleInput = (e) => {
+    setInputtext(+e.target.value);
+  };
+
+  const handleStart = (e) => {
+    setMinutes(inputtext);
+    setSecond(0);
   };
 
   return (
@@ -43,6 +56,17 @@ function Timer() {
       <div className={styles.container}>
         <div className={styles.TimerContainer}>
           <h1>Timer</h1>
+          <div className={styles.InputDiv}>
+            <input
+              onChange={handleInput}
+              type="text"
+              className={styles.Input}
+              placeholder="Enter Only Minutes"
+            ></input>
+            <button onClick={handleStart} className={styles.Start}>
+              Start
+            </button>
+          </div>
           <h1>
             {minutes < 10 ? "0" + minutes : minutes} :{" "}
             {second < 10 ? "0" + second : second}

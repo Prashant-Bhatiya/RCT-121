@@ -1,15 +1,12 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import "./App.css";
+import Grid from "./comonents/Grid";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <h1>Tic Tac Toe</h1>
+      <Grid />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

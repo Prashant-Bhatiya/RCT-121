@@ -1,0 +1,11 @@
+@media screen and (min-width: 30em) {
+    /* #purple {
+      background-color: red; */
+    /* } */
+  }
+  
+  @media screen and (min-width: 48em) {
+    #purple {
+      background-color: red;
+    }
+  }

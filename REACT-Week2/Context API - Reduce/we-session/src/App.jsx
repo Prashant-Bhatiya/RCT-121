@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useContext } from "react";
+import "./App.css";
+import AppContextProvider, { AppContext } from "./Contexts/AppContextProvider";
+import Button from "./components/Button";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const {setTheme} = useContext(AppContext);
   return (
-    <div className="App">
-      <h1>Learning Context API</h1>
-    </div>
-  )
+    <AppContextProvider>
+      <div className="App">
+        <h1>Learning Context API</h1>
+        <Button text="Theme" />
+        <button onClick={setTheme} >Change Theme</button>
+      </div>
+    </AppContextProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const AppContext = React.createContext();
+export const AppContext = React.createContext("");
 
 function AppContextProvider({ children }) {
   const [state, setState] = useState("Light");

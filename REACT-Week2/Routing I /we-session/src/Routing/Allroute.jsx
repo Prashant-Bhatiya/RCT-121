@@ -24,6 +24,8 @@ const Navbar = () => {
 };
 
 function Allroute() {
+
+    
   return (
     <>
       <Navbar />

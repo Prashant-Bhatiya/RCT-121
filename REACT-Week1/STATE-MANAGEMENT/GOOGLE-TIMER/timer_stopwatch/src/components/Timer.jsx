@@ -11,27 +11,27 @@ function Timer() {
 
   useEffect(() => {
     if (stop === true) {
-      // timer = setInterval(() => {
-      //   setSecond(second - 1);
+      timer = setInterval(() => {
+        setSecond(second - 1);
 
-      //   if (second === 0) {
-      //     setSecond(59);
-      //     setMinutes(minutes - 1);
-      //   }
-      //   if (second === 0 && minutes === 0) {
-      //     setSecond(0);
-      //     setMinutes(0);
-      //     alert("Your Timer is Completed!")
-      //     alert("It will again Start From 59 Seconds!")
-      //     alert("If you want to Modify Enter Minutes and Click On Start Button!")
-      //     setSecond(59);
-      //     setMinutes(minutes - 1);
-      //   }
+        if (second === 0) {
+          setSecond(59);
+          setMinutes(minutes - 1);
+        }
+        if (second === 0 && minutes === 0) {
+          setSecond(0);
+          setMinutes(0);
+          alert("Your Timer is Completed!")
+          alert("It will again Start From 59 Seconds!")
+          alert("If you want to Modify Enter Minutes and Click On Start Button!")
+          setSecond(59);
+          setMinutes(minutes - 1);
+        }
 
-      //   if (minutes === 0) {
-      //     setMinutes(0);
-      //   }
-      // }, 1000);
+        if (minutes === 0) {
+          setMinutes(0);
+        }
+      }, 1000);
 
       return () => {
         clearInterval(timer);

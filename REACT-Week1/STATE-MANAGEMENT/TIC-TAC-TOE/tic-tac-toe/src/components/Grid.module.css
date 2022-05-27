@@ -1,0 +1,14 @@
+.Table .Td {
+    border: 1px solid grey;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .Container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+  }
+  

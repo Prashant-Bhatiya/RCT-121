@@ -1,5 +1,5 @@
 import "./App.css";
-import Grid from "./comonents/Grid";
+import Grid from "./components/Grid";
 
 function App() {
   return (

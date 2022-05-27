@@ -18,9 +18,10 @@ function Users() {
       });
   }, []);
   return (
+    
     <div>
       {loading && <div>loading</div>}
-        {myData.data.map((items)=>{})}
+      {/* {myData.data.map((items)=>{})} */}
     </div>
   );
 }

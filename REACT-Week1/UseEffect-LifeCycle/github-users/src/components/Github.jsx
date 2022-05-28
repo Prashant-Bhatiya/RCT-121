@@ -20,7 +20,7 @@ function Github() {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [erro, setError] = useState(false);
-  const [query, setQuery] = useState("masai");
+  const [query, setQuery] = useState("react");
 
   useEffect(() => {
     GetGithubRepos(query, page)

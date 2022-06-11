@@ -4,7 +4,6 @@ import { RestaurantDetails } from "./components/RestaurantDetails";
 import RestaurantForm from "./components/RestaurantForm";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <div>

@@ -18,7 +18,7 @@ export const RestaurantDetails = () => {
     return () => {
       console.log("second");
     };
-  }, []);
+  }, [dataArr]);
 
   return (
     <>

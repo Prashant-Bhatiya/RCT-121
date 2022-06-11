@@ -7,9 +7,8 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-      <h1>Restaurant</h1>
-      <RestaurantForm /> 
+    <div>
+      <RestaurantForm />
       <br />
       <br />
       <RestaurantDetails />

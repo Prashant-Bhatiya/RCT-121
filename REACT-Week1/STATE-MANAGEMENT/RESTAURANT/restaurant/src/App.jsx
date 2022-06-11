@@ -1,6 +1,6 @@
 import { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import { RestaurantDetails } from "./components/RestaurantDetails";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <h1>Restaurant</h1>
+      <RestaurantDetails /> 
     </div>
   );
 }

@@ -6,7 +6,7 @@ import RestaurantCard from "./RestaurantCard";
 export const RestaurantDetails = () => {
   const [page, setPage] = useState(1);
   const [dataArr, setDatArr] = useState([]);
-  const [sortFunc, setSortFunc] = useState("asc");
+  const [sortFunc, setSortFunc] = useState("desc");
   useEffect(() => {
     axios({
       method: "get",
@@ -36,7 +36,7 @@ export const RestaurantDetails = () => {
         <div
           style={{
             border: "1px solid transparent",
-            width: "25%",
+            width: "30%",
             margin: "auto",
           }}
         >
@@ -49,7 +49,7 @@ export const RestaurantDetails = () => {
               setSortFunc("asc");
             }}
           >
-            Sort by Ascending
+            Rating Sort by Ascending
           </button>
           <button
             style={{
@@ -60,9 +60,10 @@ export const RestaurantDetails = () => {
               setSortFunc("desc");
             }}
           >
-            Sort by Decending
+            Rating Sort by Decending
           </button>
         </div>
+
         <div
           style={{
             border: "1px solid transparent",
@@ -82,12 +83,12 @@ export const RestaurantDetails = () => {
           >
             Prev
           </button>
-
+          {/* 
           <PaginationComponents
             currentPage={page}
             lastPage={5}
             onPageChange={setPage}
-          />
+          /> */}
           <button
             style={{
               fontSize: "18px",
@@ -115,9 +116,9 @@ export const RestaurantDetails = () => {
 
 const PaginationComponents = ({ currentPage, lastPage, onPageChange }) => {
   const arr = new Array(lastPage).fill(0);
+  console.log(typeof currentPage);
   return (
     <div
-      key={currentPage}
       style={{
         marginLeft: "-25px",
         border: "1px solid transparent",
@@ -129,6 +130,7 @@ const PaginationComponents = ({ currentPage, lastPage, onPageChange }) => {
             fontSize: "15px",
             border: "1px solid transparent",
           }}
+          key={currentPage}
           disabled={page + 1 === currentPage}
           onClick={() => onPageChange(page + 1)}
         >

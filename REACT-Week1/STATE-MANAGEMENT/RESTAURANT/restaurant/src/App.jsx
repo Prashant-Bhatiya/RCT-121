@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { Navigate, Route, Routes, useParams } from "react-router";
+import { Link } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
 import { RestaurantDetails } from "./components/RestaurantDetails";
 import RestaurantForm from "./components/RestaurantForm";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <h1
         style={{
           border: "1px solid transparent",
@@ -16,8 +16,16 @@ function App() {
       >
         Restaurant Details !
       </h1>
-      <Home />
-      {/* <RestaurantDetails /> */}
+      <div>
+        <Routes>
+          <Route path="/form" element={<RestaurantForm />} />
+          <Route path="/list" element={<RestaurantDetails />} />
+        </Routes>
+      </div>
+      <div className="App">
+        <Link to="/form">Add Restaurant</Link>{" "}
+        <Link to="/list">Show Restaurant Details</Link>
+      </div>
     </div>
   );
 }

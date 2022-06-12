@@ -1,5 +1,6 @@
 import { Box, Button, Container, FormControl, Input } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const RestaurantForm = () => {
   const [form, setForm] = useState({
@@ -19,6 +20,7 @@ const RestaurantForm = () => {
   };
   return (
     <>
+      <Link to="/">Back to Home</Link> 
       <h1 className="App">Enter Restaurant Details !</h1>
       <Container
         //   border={"0.2px solid red"}

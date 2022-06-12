@@ -1,6 +1,7 @@
 import { Box, Container } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 
 export const RestaurantDetails = () => {
@@ -32,6 +33,7 @@ export const RestaurantDetails = () => {
   }, [page, sortFunc]);
   return (
     <>
+    <Link to={"/"}>Back to Home</Link>
       <Container>
         <div
           style={{

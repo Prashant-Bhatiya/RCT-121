@@ -1,0 +1,39 @@
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
+
+const Users = () => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setLoading(true);
+    axios({
+      url: "https://reqres.in/api/users",
+      method: "GET",
+    })
+      .then((res) => {
+        // console.log(res.data.data)
+        setData(res.data.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  return (
+    <div>
+      {loading && <div>...Loading</div>}
+      {data?.map((item) => (
+        <div style={{ marginTop: "1rem" }} key={item.id}>
+          <div> Name : {item.first_name}</div>
+          <div> Email : {item.email}</div>
+          <Link to={`/users/${item.id}`}>See more</Link>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Users;

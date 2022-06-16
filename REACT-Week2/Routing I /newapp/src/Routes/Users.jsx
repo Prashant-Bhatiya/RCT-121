@@ -6,6 +6,7 @@ import { AuthContext } from "../Context/AuthContext";
 const Users = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [state] = useContext(AuthContext);
 
   useEffect(() => {
     setLoading(true);
@@ -25,6 +26,7 @@ const Users = () => {
 
   return (
     <div>
+    {state.token && <h4>Token : {state.token}</h4>}
       {loading && <div>...Loading</div>}
       {data?.map((item) => (
         <div style={{ marginTop: "1rem" }} key={item.id}>
